@@ -13,6 +13,6 @@
     <mvc:annotation-driven/>
 
     <!-- Base package to search for spring beans -->
-    <context:component-scan base-package="org.academiadecodigo.hackathonbackend"/>>>
+    <context:component-scan base-package="org.academiadecodigo.hackathonbackend"/>
 
 </beans>
