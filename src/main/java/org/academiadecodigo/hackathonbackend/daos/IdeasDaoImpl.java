@@ -21,7 +21,7 @@ public class IdeasDaoImpl implements IdeasDao {
     }
 
     public void populateIdeas(){
-        int count = 0;
+        int count = 1;
 
         Idea evilIdea1 = new Idea();
         evilIdea1.setId(count);
@@ -29,6 +29,7 @@ public class IdeasDaoImpl implements IdeasDao {
         evilIdea1.setDescription("You might need a chair, and a lot of cello tape");
         evilIdea1.setMood(Mood.EVIL_GENIUS);
         allIdeas.add(evilIdea1);
+        count++;
 
         Idea goodIdea1 = new Idea();
         goodIdea1.setId(count);
@@ -36,6 +37,7 @@ public class IdeasDaoImpl implements IdeasDao {
         goodIdea1.setDescription("Mental health is important!");
         goodIdea1.setMood(Mood.GOOD_HEART);
         allIdeas.add(goodIdea1);
+        count++;
 
         Idea adventurousIdea1 = new Idea();
         adventurousIdea1.setId(count);
@@ -43,6 +45,7 @@ public class IdeasDaoImpl implements IdeasDao {
         adventurousIdea1.setDescription("Benefits might include boosted immunity");
         adventurousIdea1.setMood(Mood.ADVENTURE);
         allIdeas.add(adventurousIdea1);
+        count++;
 
         Idea normalIdea1 = new Idea();
         normalIdea1.setId(count);
@@ -50,6 +53,7 @@ public class IdeasDaoImpl implements IdeasDao {
         normalIdea1.setDescription("We all know it's been left untouched for way too long");
         normalIdea1.setMood(Mood.NORMAL);
         allIdeas.add(normalIdea1);
+        count++;
 
         Idea evilIdea2 = new Idea();
         evilIdea2.setId(count);
@@ -57,6 +61,7 @@ public class IdeasDaoImpl implements IdeasDao {
         evilIdea2.setDescription("Isn't it great seeing their faces of confusion when you do this?");
         evilIdea2.setMood(Mood.EVIL_GENIUS);
         allIdeas.add(evilIdea2);
+        count++;
 
         Idea goodIdea2 = new Idea();
         goodIdea2.setId(count);
@@ -64,6 +69,7 @@ public class IdeasDaoImpl implements IdeasDao {
         goodIdea2.setDescription("Those damn kids!");
         goodIdea2.setMood(Mood.GOOD_HEART);
         allIdeas.add(goodIdea2);
+        count++;
 
         Idea adventurousIdea2 = new Idea();
         adventurousIdea2.setId(count);
@@ -72,6 +78,7 @@ public class IdeasDaoImpl implements IdeasDao {
                 "friend of yours that's really tall");
         adventurousIdea2.setMood(Mood.ADVENTURE);
         allIdeas.add(adventurousIdea2);
+        count++;
 
         Idea normalIdea2 = new Idea();
         normalIdea2.setId(count);
@@ -79,5 +86,6 @@ public class IdeasDaoImpl implements IdeasDao {
         normalIdea2.setDescription("They have been piling up, the time to do it is now!");
         normalIdea2.setMood(Mood.NORMAL);
         allIdeas.add(normalIdea2);
+        count++;
     }
 }
