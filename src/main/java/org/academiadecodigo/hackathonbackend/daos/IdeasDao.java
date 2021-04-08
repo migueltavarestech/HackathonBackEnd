@@ -1,9 +1,9 @@
 package org.academiadecodigo.hackathonbackend.daos;
 
-import org.academiadecodigo.hackathonbackend.model.IdeaMock;
+import org.academiadecodigo.hackathonbackend.models.Idea;
 
 public interface IdeasDao {
 
-    IdeaMock[] getIdeas();
+    Idea[] getAllIdeas();
 
 }

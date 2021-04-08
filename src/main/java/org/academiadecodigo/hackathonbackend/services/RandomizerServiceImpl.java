@@ -1,8 +1,8 @@
 package org.academiadecodigo.hackathonbackend.services;
 
 import org.academiadecodigo.hackathonbackend.daos.IdeasDao;
-import org.academiadecodigo.hackathonbackend.model.IdeaMock;
-import org.academiadecodigo.hackathonbackend.model.MoodMock;
+import org.academiadecodigo.hackathonbackend.models.Idea;
+import org.academiadecodigo.hackathonbackend.models.Mood;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,10 +21,10 @@ public class RandomizerServiceImpl implements RandomizerService {
     }
 
     @Override
-    public IdeaMock getRandomIdea(String mood) {
-        List<IdeaMock> ideaMocks = Arrays.stream(ideasDao.getIdeas())
-                .filter(ideaMock -> MoodMock.valueOf(mood).equals(ideaMock.getMood()))
+    public Idea getRandomIdea(String mood) {
+        List<Idea> ideas = Arrays.stream(ideasDao.getAllIdeas())
+                .filter(idea -> Mood.valueOf(mood).equals(idea.getMood()))
                 .collect(Collectors.toList());
-        return ideaMocks.get((int) (Math.floor(Math.random()*ideaMocks.size())));
+        return ideas.get((int) (Math.floor(Math.random()*ideas.size())));
     }
 }

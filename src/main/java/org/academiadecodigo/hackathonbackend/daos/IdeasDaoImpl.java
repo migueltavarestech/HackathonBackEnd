@@ -1,6 +1,9 @@
-package org.academiadecodigo.hackathonbackend.models;
+package org.academiadecodigo.hackathonbackend.daos;
 
-public class IdeasDao {
+import org.academiadecodigo.hackathonbackend.models.Idea;
+import org.academiadecodigo.hackathonbackend.models.Mood;
+
+public class IdeasDaoImpl implements IdeasDao {
 
     private Idea[] allIdeas;
 

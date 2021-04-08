@@ -1,8 +1,8 @@
 package org.academiadecodigo.hackathonbackend.services;
 
-import org.academiadecodigo.hackathonbackend.model.IdeaMock;
+import org.academiadecodigo.hackathonbackend.models.Idea;
 
 public interface RandomizerService {
 
-    IdeaMock getRandomIdea(String mood);
+    Idea getRandomIdea(String mood);
 }
