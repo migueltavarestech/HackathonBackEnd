@@ -1,4 +1,4 @@
-package org.academiadecodigo.javabank;
+package org.academiadecodigo.hackathonbackend;
 
 public class Main {
 
