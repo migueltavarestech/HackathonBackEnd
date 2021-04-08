@@ -22,7 +22,7 @@ public class RandomizerServiceImpl implements RandomizerService {
 
     @Override
     public Idea getRandomIdea(String mood) {
-        List<Idea> ideas = Arrays.stream(ideasDao.getAllIdeas())
+        List<Idea> ideas = ideasDao.getAllIdeas().stream()
                 .filter(idea -> Mood.valueOf(mood).equals(idea.getMood()))
                 .collect(Collectors.toList());
         return ideas.get((int) (Math.floor(Math.random()*ideas.size())));
