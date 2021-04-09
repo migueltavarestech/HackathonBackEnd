@@ -20,7 +20,7 @@ public class LoginController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = {"signin", "signin/"})
+    @RequestMapping(method = RequestMethod.POST, path = {"signin", "signin/"})
     public ResponseEntity<User> doLogin(@RequestBody User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
@@ -41,7 +41,7 @@ public class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.PUT, path = {"signup", "signup/"})
+    @RequestMapping(method = RequestMethod.POST, path = {"signup", "signup/"})
     public ResponseEntity<User> signUp(@RequestBody User user) {
 
         if (userService.get(user.getEmail()) != null) {

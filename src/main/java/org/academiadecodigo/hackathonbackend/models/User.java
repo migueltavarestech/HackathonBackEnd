@@ -7,12 +7,12 @@ public class User {
 
     private final String email;
     private final String password;
-    private final LinkedList<Badge> badges;
+    //private final LinkedList<Badge> badges;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
-        badges = new LinkedList<>();
+        //badges = new LinkedList<>();
     }
 
     public String getEmail() {
@@ -23,13 +23,13 @@ public class User {
         return password;
     }
 
-    public LinkedList<Badge> getBadges() {
-        return badges;
-    }
+    //public LinkedList<Badge> getBadges() {
+        //return badges;
+    //}
 
-    public void addBadge(Badge badge) {
-        badges.add(badge);
-    }
+    //public void addBadge(Badge badge) {
+        //badges.add(badge);
+    //}
 
     @Override
     public boolean equals(Object o) {
