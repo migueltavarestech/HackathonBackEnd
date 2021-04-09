@@ -4,5 +4,5 @@ import org.academiadecodigo.hackathonbackend.models.Badge;
 
 public interface BadgeDao {
 
-    Badge findByIdentifier(String identifier);
+    Badge findById(Integer id);
 }

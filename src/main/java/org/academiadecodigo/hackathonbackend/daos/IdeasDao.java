@@ -8,4 +8,6 @@ public interface IdeasDao {
 
     List<Idea> getAllIdeas();
 
+    void delete(Idea idea);
+
 }

@@ -1,9 +1,7 @@
 package org.academiadecodigo.hackathonbackend.services;
 
-import org.academiadecodigo.hackathonbackend.daos.BadgeDao;
 import org.academiadecodigo.hackathonbackend.daos.UserDao;
 import org.academiadecodigo.hackathonbackend.models.Badge;
-import org.academiadecodigo.hackathonbackend.models.Mood;
 import org.academiadecodigo.hackathonbackend.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +19,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User get(String username) {
-        return userDao.findByUsername(username.toLowerCase());
+    public User get(String email) {
+        return userDao.findByEmail(email.toLowerCase());
     }
 
     @Override
@@ -44,7 +42,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void addBadge(String username, Badge badge) {
-        userDao.saveBadge(userDao.findByUsername(username), badge);
+    public void addBadge(String email, Badge badge) {
+        userDao.saveBadge(userDao.findByEmail(email), badge);
     }
 }

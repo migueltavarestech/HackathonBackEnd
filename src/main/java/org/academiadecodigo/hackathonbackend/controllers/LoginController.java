@@ -20,14 +20,14 @@ public class LoginController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"login", "login/"})
+    @RequestMapping(method = RequestMethod.POST, path = {"signin", "signin/"})
     public ResponseEntity<User> doLogin(@RequestBody User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        User dbUser = userService.get(user.getUsername());
+        User dbUser = userService.get(user.getEmail());
 
         if (dbUser == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -44,7 +44,7 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.POST, path = {"signup", "signup/"})
     public ResponseEntity<User> signUp(@RequestBody User user) {
 
-        if (userService.get(user.getUsername()) != null) {
+        if (userService.get(user.getEmail()) != null) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
 

@@ -2,7 +2,6 @@ package org.academiadecodigo.hackathonbackend.daos.mock;
 
 import org.academiadecodigo.hackathonbackend.daos.UserDao;
 import org.academiadecodigo.hackathonbackend.models.Badge;
-import org.academiadecodigo.hackathonbackend.models.Mood;
 import org.academiadecodigo.hackathonbackend.models.User;
 import org.springframework.stereotype.Repository;
 
@@ -20,20 +19,19 @@ public class UserDaoMock implements UserDao {
     }
 
     private void populateUsers() {
-        newUser("coolStuff");
-        newUser("userVeryMalefic");
-        newUser("userSuperMegaMalefic");
+        newUser("coolStuff", "admin1");
+        newUser("userVeryMalefic", "admin2");
+        newUser("userSuperMegaMalefic", "admin3");
     }
 
-    private void newUser(String username) {
+    private void newUser(String email, String password) {
 
-        if(allUsers.stream().anyMatch(user -> user.getUsername().equals(username.toLowerCase()))) {
+        if(allUsers.stream().anyMatch(user -> user.getEmail().equals(email.toLowerCase()))) {
             System.out.println("USER ALREADY EXISTS");
             return;
         }
 
-        User user = new User();
-        user.setUsername(username.toLowerCase());
+        User user = new User(email.toLowerCase(), password);
         allUsers.add(user);
     }
 
@@ -43,9 +41,9 @@ public class UserDaoMock implements UserDao {
     }
 
     @Override
-    public User findByUsername(String username) {
+    public User findByEmail(String email) {
         return allUsers.stream()
-                .filter(user -> user.getUsername().equals(username.toLowerCase()))
+                .filter(user -> user.getEmail().equals(email.toLowerCase()))
                 .findAny()
                 .orElse(null);
     }
@@ -60,5 +58,4 @@ public class UserDaoMock implements UserDao {
     public void saveBadge(User user, Badge badge) {
         user.addBadge(badge);
     }
-
 }

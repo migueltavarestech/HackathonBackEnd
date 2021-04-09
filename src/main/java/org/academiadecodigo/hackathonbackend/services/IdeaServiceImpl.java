@@ -26,4 +26,9 @@ public class IdeaServiceImpl implements IdeaService {
                 .collect(Collectors.toList());
         return ideas.get((int) (Math.floor(Math.random()*ideas.size())));
     }
+
+    @Override
+    public void delete(Idea idea) {
+        ideasDao.delete(idea);
+    }
 }

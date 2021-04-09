@@ -33,15 +33,21 @@ public class IdeasDaoMock implements IdeasDao {
     public void newIdea(String title, String description, Mood mood) {
 
         totalIdeas++;
-        Idea idea = new Idea();
-        idea.setId(totalIdeas);
-        idea.setTitle(title);
-        idea.setDescription(description);
-        idea.setMood(mood);
+        Idea idea = new Idea.IdeaBuilder()
+                .setId(totalIdeas)
+                .setTitle(title)
+                .setDescription(description)
+                .setMood(mood)
+                .build();
         allIdeas.add(idea);
     }
 
     public List<Idea> getAllIdeas() {
         return allIdeas;
+    }
+
+    @Override
+    public void delete(Idea idea) {
+        allIdeas.remove(idea);
     }
 }

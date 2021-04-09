@@ -21,7 +21,8 @@ public class IdeaController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/generate/{mood}", "/generate/{mood}/"})
     public ResponseEntity<Idea> getIdea(@PathVariable String mood) {
-
-        return new ResponseEntity<>(ideaService.getRandomIdea(mood), HttpStatus.OK);
+        Idea idea = ideaService.getRandomIdea(mood);
+        ideaService.delete(idea);
+        return new ResponseEntity<>(idea, HttpStatus.OK);
     }
 }
