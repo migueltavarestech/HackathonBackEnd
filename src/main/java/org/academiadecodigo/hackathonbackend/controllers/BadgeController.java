@@ -43,9 +43,9 @@ public class BadgeController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, path = {"/{badgeIdentifier}", "/{badgeIdentifier}/"})
-    public ResponseEntity<LinkedList<Badge>> addBadge(@PathVariable String username, @PathVariable String badgeIdentifier) {
+    public ResponseEntity<?> addBadge(@PathVariable String username, @PathVariable String badgeIdentifier) {
 
-        userService.addBadge(username, badgeIdentifier);
+        userService.addBadge(username, badgeService.get(badgeIdentifier));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

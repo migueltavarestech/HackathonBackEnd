@@ -12,5 +12,7 @@ public interface UserDao {
 
     User findByUsername(String username);
 
+    User saveOrUpdate(User user);
+
     void saveBadge(User user, Badge badge);
 }

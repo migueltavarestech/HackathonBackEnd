@@ -20,12 +20,12 @@ public class UserDaoMock implements UserDao {
     }
 
     private void populateUsers() {
-        newUser("coolStuff", Mood.NORMAL);
-        newUser("userVeryMalefic", Mood.EVIL_GENIUS);
-        newUser("userSuperMegaMalefic", Mood.GOOD_HEART);
+        newUser("coolStuff");
+        newUser("userVeryMalefic");
+        newUser("userSuperMegaMalefic");
     }
 
-    private void newUser(String username, Mood mood) {
+    private void newUser(String username) {
 
         if(allUsers.stream().anyMatch(user -> user.getUsername().equals(username.toLowerCase()))) {
             System.out.println("USER ALREADY EXISTS");
@@ -34,7 +34,6 @@ public class UserDaoMock implements UserDao {
 
         User user = new User();
         user.setUsername(username.toLowerCase());
-        user.setMood(mood);
         allUsers.add(user);
     }
 
@@ -49,6 +48,12 @@ public class UserDaoMock implements UserDao {
                 .filter(user -> user.getUsername().equals(username.toLowerCase()))
                 .findAny()
                 .orElse(null);
+    }
+
+    @Override
+    public User saveOrUpdate(User user) {
+        allUsers.add(user);
+        return user;
     }
 
     @Override
