@@ -16,7 +16,7 @@ public class BadgeServiceImpl implements BadgeService {
     }
 
     @Override
-    public Badge get(String badgeIdentifier) {
-        return badgeDao.findByIdentifier(badgeIdentifier);
+    public Badge get(Integer id) {
+        return badgeDao.findById(id);
     }
 }

@@ -4,5 +4,5 @@ import org.academiadecodigo.hackathonbackend.models.Badge;
 
 public interface BadgeService {
 
-    Badge get(String badgeIdentifier);
+    Badge get(Integer id);
 }

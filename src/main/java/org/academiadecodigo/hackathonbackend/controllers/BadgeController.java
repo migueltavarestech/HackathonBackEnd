@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.LinkedList;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -42,10 +41,10 @@ public class BadgeController {
         return new ResponseEntity<>(userService.getUserBadges(user), HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = {"/{badgeIdentifier}", "/{badgeIdentifier}/"})
-    public ResponseEntity<?> addBadge(@PathVariable String username, @PathVariable String badgeIdentifier) {
+    @RequestMapping(method = RequestMethod.PUT, path = {"/{id}", "/{id}/"})
+    public ResponseEntity<?> addBadge(@PathVariable String username, @PathVariable Integer id) {
 
-        userService.addBadge(username, badgeService.get(badgeIdentifier));
+        userService.addBadge(username, badgeService.get(id));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
