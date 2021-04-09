@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Idea {
 
-    private final int id;
-    private final String title;
-    private final String description;
-    private final Mood mood;
+    private int id;
+    private String title;
+    private String description;
+    private Mood mood;
 
     private Idea(IdeaBuilder ideaBuilder) {
         this.id = ideaBuilder.getId();

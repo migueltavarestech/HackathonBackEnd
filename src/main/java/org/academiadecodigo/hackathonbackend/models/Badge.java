@@ -4,10 +4,9 @@ import java.util.Objects;
 
 public class Badge {
 
-    private final Integer id;
-    private final String title;
-    private final String description;
-
+    private Integer id;
+    private String title;
+    private String description;
 
     private Badge(BadgeBuilder badgeBuilder) {
         this.id = badgeBuilder.getId();
