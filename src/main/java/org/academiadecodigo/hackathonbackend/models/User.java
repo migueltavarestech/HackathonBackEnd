@@ -9,6 +9,10 @@ public class User {
     private String password;
     private final LinkedList<Badge> badges;
 
+    public User() {
+        badges = new LinkedList<>();
+    }
+
     public User(String email, String password) {
         this.email = email;
         this.password = password;

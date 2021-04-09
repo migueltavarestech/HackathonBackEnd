@@ -9,7 +9,11 @@ public class Idea {
     private String description;
     private Mood mood;
 
-    private Idea(IdeaBuilder ideaBuilder) {
+    public Idea() {
+
+    }
+
+    public Idea(IdeaBuilder ideaBuilder) {
         this.id = ideaBuilder.getId();
         this.title = ideaBuilder.getTitle();
         this.description = ideaBuilder.getDescription();

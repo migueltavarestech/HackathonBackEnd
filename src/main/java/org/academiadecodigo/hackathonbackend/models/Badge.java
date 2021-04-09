@@ -8,7 +8,11 @@ public class Badge {
     private String title;
     private String description;
 
-    private Badge(BadgeBuilder badgeBuilder) {
+    public Badge() {
+
+    }
+
+    public Badge(BadgeBuilder badgeBuilder) {
         this.id = badgeBuilder.getId();
         this.title = badgeBuilder.getTitle();
         this.description = badgeBuilder.getDescription();
