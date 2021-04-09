@@ -17,6 +17,7 @@ public class BadgeDaoMock implements BadgeDao {
 
     public BadgeDaoMock() {
         allBadges = new LinkedList<>();
+        populateBadges();
     }
 
     private void populateBadges() {
