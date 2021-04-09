@@ -7,7 +7,6 @@ public class Idea {
     private String description;
     private Mood mood;
 
-
     public int getId() {
         return id;
     }
