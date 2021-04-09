@@ -7,8 +7,7 @@ public class User {
 
     private final String email;
     private final String password;
-
-    //private final LinkedList<Badge> badges = new LinkedList<>();
+    private LinkedList<Badge> badges;
 
     public User(String email, String password) {
         this.email = email;
@@ -24,12 +23,15 @@ public class User {
     }
 
     public LinkedList<Badge> getBadges() {
-        return new LinkedList<>();
-        //return badges;
+        return badges;
+    }
+
+    public void setBadges(LinkedList<Badge> badges) {
+        this.badges = badges;
     }
 
     public void addBadge(Badge badge) {
-        //badges.add(badge);
+        badges.add(badge);
     }
 
     @Override
