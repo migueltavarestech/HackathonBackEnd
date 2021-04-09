@@ -2,7 +2,7 @@ package org.academiadecodigo.hackathonbackend.services;
 
 import org.academiadecodigo.hackathonbackend.models.Idea;
 
-public interface RandomizerService {
+public interface IdeaService {
 
     Idea getRandomIdea(String mood);
 }

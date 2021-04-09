@@ -1,5 +1,6 @@
-package org.academiadecodigo.hackathonbackend.daos;
+package org.academiadecodigo.hackathonbackend.daos.mock;
 
+import org.academiadecodigo.hackathonbackend.daos.IdeasDao;
 import org.academiadecodigo.hackathonbackend.models.Idea;
 import org.academiadecodigo.hackathonbackend.models.Mood;
 import org.springframework.stereotype.Repository;
@@ -8,21 +9,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Repository
-public class IdeasDaoImpl implements IdeasDao {
+public class IdeasDaoMock implements IdeasDao {
 
     private final List<Idea> allIdeas;
     private int totalIdeas;
 
-    public IdeasDaoImpl() {
+    public IdeasDaoMock() {
         allIdeas = new LinkedList<>();
         populateIdeas();
     }
 
-    public List<Idea> getAllIdeas() {
-        return allIdeas;
-    }
-
-    public void populateIdeas(){
+    private void populateIdeas(){
         newIdea("Tie your grandma to a chair", "You might need a chair, and a lot of cello tape", Mood.EVIL_GENIUS);
         newIdea("Check up on your friend that lives alone", "Mental health is important!", Mood.GOOD_HEART);
         newIdea("Jump into an ice-cold lake", "Benefits might include boosted immunity", Mood.ADVENTURE);
@@ -42,5 +39,9 @@ public class IdeasDaoImpl implements IdeasDao {
         idea.setDescription(description);
         idea.setMood(mood);
         allIdeas.add(idea);
+    }
+
+    public List<Idea> getAllIdeas() {
+        return allIdeas;
     }
 }

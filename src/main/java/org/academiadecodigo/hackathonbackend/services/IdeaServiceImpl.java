@@ -6,12 +6,11 @@ import org.academiadecodigo.hackathonbackend.models.Mood;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class RandomizerServiceImpl implements RandomizerService {
+public class IdeaServiceImpl implements IdeaService {
 
     private IdeasDao ideasDao;
 

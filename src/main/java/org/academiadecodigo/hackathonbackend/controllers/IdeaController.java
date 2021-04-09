@@ -1,7 +1,7 @@
 package org.academiadecodigo.hackathonbackend.controllers;
 
 import org.academiadecodigo.hackathonbackend.models.Idea;
-import org.academiadecodigo.hackathonbackend.services.RandomizerService;
+import org.academiadecodigo.hackathonbackend.services.IdeaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/idea")
 public class IdeaController {
 
-    private RandomizerService randomizerService;
+    private IdeaService ideaService;
 
     @Autowired
-    public void setRandomizerService(RandomizerService randomizerService) {
-        this.randomizerService = randomizerService;
+    public void setRandomizerService(IdeaService ideaService) {
+        this.ideaService = ideaService;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/generate/{mood}", "/generate/{mood}/"})
     public ResponseEntity<Idea> getIdea(@PathVariable String mood) {
 
-        return new ResponseEntity<>(randomizerService.getRandomIdea(mood), HttpStatus.OK);
+        return new ResponseEntity<>(ideaService.getRandomIdea(mood), HttpStatus.OK);
     }
 }
