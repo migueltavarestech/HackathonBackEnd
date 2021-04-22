@@ -8,9 +8,7 @@ public class Badge {
     private String title;
     private String description;
 
-    public Badge() {
-
-    }
+    public Badge() {}
 
     public Badge(BadgeBuilder badgeBuilder) {
         this.id = badgeBuilder.getId();
@@ -40,19 +38,6 @@ public class Badge {
 
     public String getDescription() {
         return description;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Badge badge = (Badge) o;
-        return id.equals(badge.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 
     public static class BadgeBuilder {

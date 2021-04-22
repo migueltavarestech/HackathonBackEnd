@@ -24,6 +24,7 @@ public class UserDaoMock implements UserDao {
         newUser("userSuperMegaMalefic", "admin3");
     }
 
+
     private void newUser(String email, String password) {
 
         if(allUsers.stream().anyMatch(user -> user.getEmail().equals(email.toLowerCase()))) {
@@ -40,6 +41,7 @@ public class UserDaoMock implements UserDao {
         return allUsers;
     }
 
+    //TODO - verify findFirst()
     @Override
     public User findByEmail(String email) {
         return allUsers.stream()
